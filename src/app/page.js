@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4 text-center">Tiffany&s Tasks</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Tasks with Tiffany</h1>
       <ul>
         {items.map(item => (
           <li key={item.id} className="mb-2 border-purple-500 border-2 bg-pink-200 text-black font-bold rounded-lg p-2">
