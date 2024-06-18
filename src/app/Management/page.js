@@ -94,7 +94,7 @@ export default function ManagementPage() {
                           </button>
                           <button
                             className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-700"
-                            onClick={() => handleDeleteChore(choreId)} // typo fixed
+                            onClick={() => handleDeleteChore(chore.id)} // typo fixed
                           >
                             Delete
                           </button>

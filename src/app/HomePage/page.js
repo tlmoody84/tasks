@@ -3,9 +3,7 @@ import React, { useState } from 'react';
 export default function HomePage() {
   const [chores, setChores] = useState([]); // Array to store chores
 
-  // ... (functions to handle CRUD operations, optional for Home Page)
-
-  return (
+   return (
     <div className="container mx-auto px-4 py-8">
       <h1>My Chores</h1>
       <ul className="list-disc">
