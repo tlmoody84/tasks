@@ -5,7 +5,7 @@ export default function HomePage() {
   const [chores, setChores] = useState([]); // Array to store chores
 
    return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-white">
       <h1>My Chores</h1>
       <ul className="list-disc">
         {chores.map((chore) => (

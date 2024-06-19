@@ -27,11 +27,13 @@ export default function ManagementPage() {
     addChore(newChore, newChore === 'laundry' ? newChoreDetails : '');
   };
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-6 py-9 bg-purple-700">
       <center><h1>Manage Chores</h1></center>
-      <h2>Add New Chore</h2>
+      <div className="flex flex-col my-6 text-white">
+      <h2>CHORES TO BE COMPLETED</h2>
+      </div>
       <form onSubmit={handleAddChore}>
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col my-5 text-black">
           <label htmlFor="newChore">Chore:</label>
           <input
             id="newChore"
@@ -41,7 +43,7 @@ export default function ManagementPage() {
           />
         </div>
         {newChore === 'laundry' && (
-          <div className="flex flex-col mt-2">
+          <div className="flex flex-col mt-2 text-pink-700">
             <label htmlFor="laundryDetails">Laundry Details (Optional):</label>
             <textarea
               id="laundryDetails"
@@ -52,19 +54,20 @@ export default function ManagementPage() {
             />
           </div>
         )}
-        <button type="submit">Add Chore</button>
+        <button type="submit text-black">Add Chore</button>
       </form>
-
+      <div className="flex flex-col my-6 text-yellow-500">
       <h2>Existing Chores</h2>
+      </div>
       <ul className="list-disc">
         {chores.map((chore) => (
-          <li key={chore.id} className="flex justify-between items-center mb-2">
+          <li key={chore.id} className="flex justify-between items-center mb-6 text-pink-300">
             <span
-              className={`${chore.completed ? 'text-orange-500 line-through' : ''}`}
+              className={`${chore.completed ? 'text-black-500 line-through' : ''}`}
             >
               {chore.type} {chore.details && ` (${chore.details})`}
             </span>
-            <div className="flex space-x-2">
+            <div className="flex space-x-5">
               <button
                 className="bg-green-500 text-black rounded hover:bg-pink-700"
                 onClick={() => handleMarkComplete(chore.id)}
@@ -73,7 +76,7 @@ export default function ManagementPage() {
                 Mark {chore.completed ? 'Done' : 'Complete'}
               </button>
               <button
-                className="bg-red-500 text-black rounded hover:bg-yellow-700"
+                className="bg-green-500 text-black rounded hover:bg-pink-700"
                 onClick={() => handleDeleteChore(chore.id)}
               >
                 Delete

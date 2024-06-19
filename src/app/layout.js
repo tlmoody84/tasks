@@ -15,15 +15,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <header className="w-100">
-          <nav className="flex justify-center w-100 ">
+          <nav className="flex justify-center w-100 bg-blue-300">
             <Link
-              className="m-1 text-emerald-500 hover:text-emerald-700"
+              className="m-1 text-white hover:text-pink-500"
               href="/"
             >
               Home
             </Link>
             <Link
-              className="m-1 text-emerald-500 hover:text-emerald-700"
+              className="m-1 text-pink-500 hover:text-white"
               href="/Management"
             >
               Manage Library
@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         {children}
-        <footer className="text-center">&copy; Codex January Cohort</footer>
+        <footer className="text-center mt-7">&copy; Codex January Cohort</footer>
       </body>
     </html>
   );
