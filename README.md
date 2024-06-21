@@ -27,3 +27,5 @@ This application is deployed on Vercel. You can view the live site at: (<https:/
 - React
 
 - Tailwind CSS
+
+G-Google Firebase
