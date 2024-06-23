@@ -26,13 +26,13 @@ export default function RootLayout({ children }) {
               className="m-1 text-pink-500 hover:text-white"
               href="/Management"
             >
-              Manage Library
+              Tasks
             </Link>
                 
           </nav>
         </header>
         {children}
-        <footer className="text-center mt-7">&copy; Codex January Cohort</footer>
+        <footer className="text-center mt-7">&copy; Tasks with Tiffany</footer>
       </body>
     </html>
   );

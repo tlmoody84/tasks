@@ -15,6 +15,9 @@ export default function ManagementPage() {
   const handleDeleteChore = (choreId) =>
     setChores(chores.filter((chore) => chore.id !== choreId));
 
+  const handleEdit = (choreId) =>
+    setChores(chores.filter((chore) => chore.id !== choreId));
+
   const handleMarkComplete = (choreId) =>
     setChores(
       chores.map((chore) =>
@@ -68,18 +71,26 @@ export default function ManagementPage() {
               {chore.type} {chore.details && ` (${chore.details})`}
             </span>
             <div className="flex space-x-5">
+              
+              
               <button
                 className="bg-green-500 text-black rounded hover:bg-pink-700"
-                onClick={() => handleMarkComplete(chore.id)}
-                disabled={chore.completed}
+                onClick={() => handleEdit(chore.id)}
               >
-                Mark {chore.completed ? 'Done' : 'Complete'}
+                Edit
               </button>
               <button
                 className="bg-green-500 text-black rounded hover:bg-pink-700"
                 onClick={() => handleDeleteChore(chore.id)}
               >
                 Delete
+              </button>
+              <button
+                className="bg-green-500 text-black rounded hover:bg-pink-700"
+                onClick={() => handleMarkComplete(chore.id)}
+                disabled={chore.completed}
+              >
+                Mark {chore.completed ? 'Done' : 'Complete'}
               </button>
             </div>
           </li>
