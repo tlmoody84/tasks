@@ -1,11 +1,35 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { getAllDocuments, addDocument } from '../utils/firebaseUtils';
+import { db } from '../../../firebase.config';
 
 export default function ManagementPage() {
   const [chores, setChores] = useState([]);
   const [newChore, setNewChore] = useState('');
   const [newChoreDetails, setNewChoreDetails] = useState('');
 
+  useEffect(() => {
+    async function fetchData() {
+      // try to get all documents, if you cant, catch the error
+      try {
+        const documents = await getAllDocuments(db, "chores");
+        const choreInstances = documents.map((doc) => {
+          return new chores(doc.completed, doc.details, doc.type);
+        });
+        setChores(new chores(chores.name, choreInstances));
+      } catch (error) {
+        console.log("Failed fetching data", error);
+      }
+    }
+  
+    fetchData();
+    return () => {
+      console.log("get all docs cleanup");
+    };
+  }, [chores]);
+  
+
+  
   const addChore = (type, details = '') => {
     setChores([...chores, { id: Date.now(), type, details, completed: false }]);
     setNewChore('');
@@ -24,11 +48,13 @@ export default function ManagementPage() {
         chore.id === choreId ? { ...chore, completed: !chore.completed } : chore
       )
     );
-
+  
     const handleAddChore = (e) => {
     e.preventDefault();
     addChore(newChore, newChore === 'laundry' ? newChoreDetails : '');
   };
+
+  
   return (
     <div className="container mx-auto px-6 py-9 bg-purple-700">
       <center><h1>Manage Chores</h1></center>
