@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "firebase": "^10.12.2",
+    "lodash": "^4.17.21",
     "next": "14.2.4",
     "punycode.js": "^2.3.1",
     "react": "^18",
