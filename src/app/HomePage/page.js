@@ -6,8 +6,8 @@ import { getAllDocuments } from "@utils/firebase";
 
 export default function HomePage() {
   const [chores, setChores] = useState([]); // Array to store chores
-   new chores("Tasks with Tiffany")
-
+  setChores([...chores, { type: "tasks", details: "Tasks with Tiffany" }]);
+  
    useEffect(() => {
     async function fetchData() {
       try {
