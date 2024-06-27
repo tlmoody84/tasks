@@ -1,8 +1,8 @@
 "use client";
 // import { first } from 'lodash';
 import React, { useState } from 'react';
-import { db } from "../../firebase.config";
-import { getAllDocuments } from "@utils/firebase";
+// import { db } from "../../firebase.config";
+// import { getAllDocuments } from "@utils/firebase";
 
 export default function HomePage() {
   const [chores, setChores] = useState([]); // Array to store chores
