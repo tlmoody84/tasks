@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { getAllDocuments, addDocument } from '../utils/firebaseUtils';
-import { db } from '../../../firebase.config';
+// import { db } from '../../../firebase.config';
 
 export default function ManagementPage() {
   const [chores, setChores] = useState([]);
@@ -49,7 +49,7 @@ export default function ManagementPage() {
     e.preventDefault();
     addChore(newChore, newChore === 'laundry' ? newChoreDetails : '');
   };
-  
+
   return (
 <div className="container mx-auto px-6 py-9 bg-purple-700">
       <center><h1>Manage Chores</h1></center>
