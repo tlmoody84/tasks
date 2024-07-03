@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <header className="w-100">
           <nav className="flex justify-center w-100 bg-blue-300">
+                     
             <Link
               className="m-1 text-white hover:text-pink-500"
               href="/"
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
             >
               Tasks
             </Link>
+            
                 
           </nav>
         </header>

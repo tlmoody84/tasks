@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { getAllDocuments, addDocument } from '../utils/firebaseUtils';
+import { getAllDocuments, addDocument, updateDocument, deleteDocument } from '../utils/firebaseUtils';
 import { db } from '../../../firebase.config';
 
 
@@ -106,6 +106,8 @@ export default function ManagementPage() {
               >
                 Mark {chore.completed ? 'Done' : 'Complete'}
               </button>
+          <div className="my-2 text-center">
+             </div>
             </div>
           </li>
         ))}

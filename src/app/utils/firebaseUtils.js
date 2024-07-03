@@ -1,4 +1,4 @@
-import { collection, getDocs, addDocs, doc, updateDocuments } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc, deleteDocument } from "firebase/firestore";
 
 /**
  * Generic that gets all documents from a firestore database and returns an array of objects
@@ -55,4 +55,4 @@ async function updateDocument(db, collectionName, id, data) {
     }
   }
 
-export { getAllDocuments };
+  export { getAllDocuments, addDocument, updateDocument, deleteDocument };
