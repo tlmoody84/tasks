@@ -6,11 +6,13 @@ import AddChoreForm from '../../components/AddChoreForm';
 import RegisterForm from "../../components/RegisterForm";
 import LoginForm from "../../components/LoginForm";
 import LogoutButton from "../../components/LogoutButton";
+import { deleteDoc } from 'firebase/firestore';
 
 export default function ManagementPage() {
   const [chores, setChores] = useState([]);
   const [newChore, setNewChore] = useState('');
   const [newChoreDetails, setNewChoreDetails] = useState('');
+
   useEffect(() => {
     async function fetchData() {
       // try to get all documents, if you cant, catch the error
@@ -44,10 +46,10 @@ export default function ManagementPage() {
         chore.id === choreId ? { ...chore, completed: !chore.completed } : chore
       )
     );
-    const handleAddChore = (e) => {
-    e.preventDefault();
-    addChore(newChore, newChore === 'laundry' ? newChoreDetails : '');
-  };
+    const handleAddChore = (type, details = '') => ({
+      type: 'ADD_CHORE',
+      payload: { type, details }
+  });
   return (
 <div className="container mx-auto px-6 py-9 bg-purple-700">
       <center><h1>Manage Chores</h1></center>
@@ -58,30 +60,8 @@ export default function ManagementPage() {
       <LoginForm />
       </div>
       <AddChoreForm handleAddChore={handleAddChore}/>
-      {/* <form onSubmit={handleAddChore}>
-        <div className="flex flex-col my-5 text-black">
-          <label htmlFor="newChore">Chore:</label>
-          <input
-            id="newChore"
-            name="newChore"
-            value={newChore}
-            onChange={(e) => setNewChore(e.target.value)}
-          />
-        </div>
-        {newChore === 'laundry' && (
-          <div className="flex flex-col mt-2 text-pink-700">
-            <label htmlFor="laundryDetails">Laundry Details (Optional):</label>
-            <textarea
-              id="laundryDetails"
-              name="laundryDetails"
-              rows={3}
-              value={newChoreDetails}
-              onChange={(e) => setNewChoreDetails(e.target.value)}
-            />
-          </div>
-        )}
-        <button type="submit text-black">Add Chore</button>
-      </form> */}
+     
+    
       <div className="flex flex-col my-6 text-yellow-500">
       <h2>Existing Chores</h2>
       </div>
@@ -120,3 +100,5 @@ export default function ManagementPage() {
     </div>
   );
 }
+
+export { deleteDocument };

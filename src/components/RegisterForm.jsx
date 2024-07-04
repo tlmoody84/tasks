@@ -18,15 +18,15 @@ const RegisterForm = () => {
       <p className="py-4 text-2xl font-bold text-center text-emerald-600">
         Please Register or Login to start manage Tasks
       </p>
-      <div className="w-full max-w-md p-8 mx-auto space-y-8 bg-white rounded shadow-lg y-4">
-        <h2 className="text-2xl font-bold text-center text-emerald-600">
+      <div className="w-full max-w-md p-4 mx-auto space-y-4 bg-black rounded shadow-lg y-4">
+        <h2 className="text-2xl font-bold text-center text-pink-600">
           Register
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-emerald-700"
+              className="block text-sm font-medium text-white-700"
             >
               Email
             </label>
@@ -36,7 +36,7 @@ const RegisterForm = () => {
               type="email"
               autoComplete="email"
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-xl"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -45,7 +45,7 @@ const RegisterForm = () => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-emerald-700"
+              className="block text-sm font-medium text-white-700"
             >
               Password
             </label>
@@ -55,7 +55,7 @@ const RegisterForm = () => {
               type="password"
               autoComplete="current-password"
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-xl"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
