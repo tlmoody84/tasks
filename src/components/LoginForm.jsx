@@ -79,7 +79,7 @@
 
 
 import { useState } from "react";
-import { login } from "../utils/authutils"; // Assuming login function is imported
+import { login } from "../utils/authutils";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
