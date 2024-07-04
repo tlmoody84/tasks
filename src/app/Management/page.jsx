@@ -12,6 +12,7 @@ export default function ManagementPage() {
   const [chores, setChores] = useState([]);
   const [newChore, setNewChore] = useState('');
   const [newChoreDetails, setNewChoreDetails] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); 
 
   useEffect(() => {
     async function fetchData() {
@@ -46,27 +47,30 @@ export default function ManagementPage() {
         chore.id === choreId ? { ...chore, completed: !chore.completed } : chore
       )
     );
+
     const handleAddChore = (type, details = '') => ({
       type: 'ADD_CHORE',
       payload: { type, details }
   });
   return (
-<div className="container mx-auto px-6 py-9 bg-purple-700">
+    <div className="container mx-auto px-6 py-9 bg-purple-700">
       <center><h1>Manage Chores</h1></center>
       <div className="flex flex-col my-6 text-white">
-      <h2>CHORES TO BE COMPLETED</h2>
-      <LogoutButton />
-      <RegisterForm />
-      <LoginForm />
+        <h2>CHORES TO BE COMPLETED</h2>
+        <LogoutButton />
+        <RegisterForm />
+        <LoginForm />
       </div>
-      <AddChoreForm handleAddChore={handleAddChore}/>
-     
-    
+      <AddChoreForm handleAddChore={handleAddChore} />
+
       <div className="flex flex-col my-6 text-yellow-500">
-      <h2>Existing Chores</h2>
+        <h2>Existing Chores</h2>
       </div>
       <ul className="list-disc">
-        {chores.map((chore) => (
+        {chores.filter((chore) =>
+          chore.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          (chore.details && chore.details.toLowerCase().includes(searchTerm.toLowerCase()))
+        ).map((chore) => (
           <li key={chore.id} className="flex justify-between items-center mb-6 text-pink-300">
             <span
               className={`${chore.completed ? 'text-black-500 line-through' : ''}`}
@@ -99,6 +103,6 @@ export default function ManagementPage() {
       </ul>
     </div>
   );
-}
+};
 
-export { deleteDocument };
+export { deleteDocument }; // Assuming this is used elsewhere

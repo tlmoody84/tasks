@@ -11,6 +11,8 @@ export default function Home() {
       { id: 3, name: 'Take out the trash' },
       { id: 4, name: 'Mop the floor' },
       { id: 5, name: 'Clean the bathroom' },
+      { id: 6, name: 'Walk the dog' },
+      { id: 7, name: 'Water the plants' },
     ];
     setItems(initialItems);
   }, []);
