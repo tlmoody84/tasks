@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react';
-import { start } from 'Management/start';
 import RegisterForm from "../../components/RegisterForm";
 import LoginForm from "../../components/LoginForm";
 import LogoutButton from "../../components/LogoutButton";
@@ -22,4 +21,4 @@ export default function HomePage() {
     </div>
   );
 }
-export { RegisterForm, LoginForm, LogoutButton, start };
+export { RegisterForm, LoginForm, LogoutButton  };
