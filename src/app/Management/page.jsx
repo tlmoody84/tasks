@@ -6,6 +6,7 @@ import AddChoreForm from '../../components/AddChoreForm';
 import RegisterForm from "../../components/RegisterForm";
 import LoginForm from "../../components/LoginForm";
 import LogoutButton from "../../components/LogoutButton";
+
 export default function ManagementPage() {
   const [chores, setChores] = useState([]);
   const [newChore, setNewChore] = useState('');
