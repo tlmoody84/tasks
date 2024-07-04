@@ -1,9 +1,11 @@
-"use client";
+   "use client";
 import React, { useEffect, useState } from 'react';
-import { getAllDocuments, addDocument, updateDocument, deleteDocument } from '../utils/firebaseUtils';
+import { getAllDocuments, addDocument, deleteDocument } from '../../utils/firebaseUtils';
 import { db } from '../../../firebase.config';
-
-
+import AddChoreForm from '../../components/AddChoreForm';
+import RegisterForm from "../../components/RegisterForm";
+import LoginForm from "../../components/LoginForm";
+import LogoutButton from "../../components/LogoutButton";
 export default function ManagementPage() {
   const [chores, setChores] = useState([]);
   const [newChore, setNewChore] = useState('');
@@ -50,8 +52,12 @@ export default function ManagementPage() {
       <center><h1>Manage Chores</h1></center>
       <div className="flex flex-col my-6 text-white">
       <h2>CHORES TO BE COMPLETED</h2>
+      <LogoutButton />
+      <RegisterForm />
+      <LoginForm />
       </div>
-      <form onSubmit={handleAddChore}>
+      <AddChoreForm handleAddChore={handleAddChore}/>
+      {/* <form onSubmit={handleAddChore}>
         <div className="flex flex-col my-5 text-black">
           <label htmlFor="newChore">Chore:</label>
           <input
@@ -74,7 +80,7 @@ export default function ManagementPage() {
           </div>
         )}
         <button type="submit text-black">Add Chore</button>
-      </form>
+      </form> */}
       <div className="flex flex-col my-6 text-yellow-500">
       <h2>Existing Chores</h2>
       </div>
@@ -106,8 +112,6 @@ export default function ManagementPage() {
               >
                 Mark {chore.completed ? 'Done' : 'Complete'}
               </button>
-          <div className="my-2 text-center">
-             </div>
             </div>
           </li>
         ))}

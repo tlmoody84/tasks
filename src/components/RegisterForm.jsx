@@ -1,18 +1,20 @@
 import { useState } from "react";
+import { registerUser } from "../utils/authutils";
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your registration logic here
     console.log("Email:", email);
     console.log("Password:", password);
+    await registerUser(email, password);
   };
 
   return (
-    <div className="items-center justify-center py-8 bg-emerald-50">
+    <div className="items-center justify-center py-8 bg-emerald-25">
       <p className="py-4 text-2xl font-bold text-center text-emerald-600">
         Please Register or Login to start manage Tasks
       </p>

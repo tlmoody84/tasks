@@ -1,18 +1,20 @@
 import { useState } from "react";
+import { login } from "../utils/authutils";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Add your login logic here
     console.log("Email:", email);
     console.log("Password:", password);
+    await login(email, password);
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-emerald-50">
+    <div className="flex items-center justify-center min-h-screen bg-emerald-25">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-lg">
         <h2 className="text-2xl font-bold text-center text-emerald-600">
           Login
