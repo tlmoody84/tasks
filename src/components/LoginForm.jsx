@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { login } from "../utils/authutils";
+import { registerUser } from "../utils/authUtils";
 
 
 
