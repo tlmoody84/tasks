@@ -113,7 +113,7 @@ export default function ManagementPage() {
   );
 };
 
-export { deleteDocument };
+// export { deleteDocument };
 
 
 //    "use client";
