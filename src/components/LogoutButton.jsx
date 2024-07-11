@@ -1,4 +1,6 @@
-import { logout } from "../utils/authutils";
+// import { logout } from "../utils/authutils";
+import { logout } from "../utils/authUtils";
+
 
 const LogoutButton = () => {
   const handleLogout = async () => {

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { registerUser } from "../utils/authutils";
+// import { registerUser } from "../utils/authutils";
+import { registerUser } from "../utils/authUtils";
+
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
