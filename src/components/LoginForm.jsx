@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "../src/app/utils/authutils";
+import { login } from "../utils/authutils";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
