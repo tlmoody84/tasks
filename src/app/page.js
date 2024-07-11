@@ -20,7 +20,7 @@
   return (
     <div className="container mx-auto px-12 py-12 min-h-screen bg-pink-400"> 
       <h1 className="text-7xl font-bold mb-20 text-center">Tasks with Tiffany</h1>
-      <ul className="list-disc">  {/* Use list-disc for bullet points */}
+      <ul className="list-disc">  
         {items.map((item) => (
           <li key={item.id} className="mb-7 bg-pink-200 text-black font-bold rounded-xl p-2">
             {item.name}
@@ -35,7 +35,7 @@
 
 
 
-// export default function HomePage() {
+// export default function Page() {
 //   const [chores, setChores] = useState([]); // Array to store chores
 //   // ... (functions to handle CRUD operations, optional for Home Page)
 //   return (
@@ -44,7 +44,7 @@
 //       <ul className="list-disc">
 //         {chores.map((chore) => (
 //           <li key={chore.id} className="mb-2">
-//             {chore.type === 'dishes' ? 'Washing Dishes' : 'Laundry'}
+//             {chore.type === '' ? 'Washing Dishes' : 'Laundry'}
 //             {chore.details && ` (${chore.details})`}
 //           </li>
 //         ))}

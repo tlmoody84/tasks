@@ -130,13 +130,12 @@ export default function ManagementPage() {
 
   useEffect(() => {
     async function fetchData() {
-      // try to get all documents, if you cant, catch the error
       try {
         const documents = await getAllDocuments(db, "chores");
         const choreInstances = documents.map((doc) => {
-          return new Chore(doc.completed, doc.details, doc.type); // Assuming Chore constructor exists
+          return new Chore(doc.completed, doc.details, doc.type); 
         });
-        setChores(choreInstances); // Assuming Chore constructor returns the expected object structure
+        setChores(choreInstances); 
       } catch (error) {
         console.log("Failed fetching data", error);
       }
@@ -145,17 +144,17 @@ export default function ManagementPage() {
     return () => {
       console.log("get all docs cleanup");
     };
-  }, [chores]); // Dependency on chores array to refetch on updates
+  }, [chores]); 
 
   const addChore = (type, details = '') => {
-    setChores([...chores, { id: Date.now(), type, details, completed: false }]);
+    setChores([...chores, { id: Date.now(), type, details, completed: true }]);
     setNewChore('');
     setNewChoreDetails('');
   };
   const handleDeleteChore = (choreId) =>
     setChores(chores.filter((chore) => chore.id !== choreId));
 
-  // Assuming handleEdit has proper implementation for editing chores
+  
   const handleEdit = (choreId) =>
     setChores(chores.filter((chore) => chore.id !== choreId));
 
