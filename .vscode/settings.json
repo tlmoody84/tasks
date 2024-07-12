@@ -5,9 +5,12 @@
         "ENVK",
         "Firestore",
         "headlessui",
+        "lcov",
         "noopener",
         "noreferrer",
         "tailwindcss",
+        "tlmoo",
+        "unmocked",
         "VXKY"
     ]
 }
